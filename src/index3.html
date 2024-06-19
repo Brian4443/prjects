@@ -1,0 +1,141 @@
+<section>
+
+
+
+
+
+    <script>
+    alert('Hello world');   
+    console.log('Hello World');
+    console.error('This is an error') 
+    console.log('Hello World');
+    console.warn('This is an warning') 
+
+    //let age = 30;
+    //console.log(age)
+
+    //strings
+    const name = 'Brian';
+    const age = 30;
+
+    //concatenation
+    console.log('My name is ' + name + ' and i am ' + age);
+    //Template string
+
+    console.log(' My name is  ${name} and i am ${age}');
+
+const person = {
+    firstName: 'john',
+    lastName: 'doe',
+    age: 30,
+    hobbies: ['musuc', 'movies', 'dances'],
+    address: {
+        street: '50 main st',
+        city: 'boston',
+        state: 'MA'
+    }
+}
+console.log(person)
+const { firstName, lastName, address: {city}} = person; 
+console.log(city);
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Double each number
+const doubled = numbers.map(function(number) {
+    return number * 2;
+});
+console.log(doubled); // Output: [2, 4, 6, 8, 10]
+
+// Filter out the even numbers
+const evens = doubled.filter(function(number) {
+    return number % 2 === 0;
+});
+console.log(evens); // Output: [2, 4, 6, 8, 10]
+
+// Print each even number
+evens.forEach(function(number) {
+    console.log(number);
+});
+// Output: 2, 4, 6, 8, 10 (each number on a new line)
+
+let number = 5;
+
+if (number > 0) {
+    console.log('The number is positive');
+} else if (number < 0) {
+    console.log('The number is negative');
+} else {
+    console.log('The number is zero');
+}
+
+let day = 5;
+let dayName;
+
+switch (day) {
+    case 0:
+        dayName = 'Sunday';
+        break;
+    case 1:
+        dayName = 'Monday';
+        break;
+    case 2:
+        dayName = 'Tuesday';
+        break;
+    case 3:
+        dayName = 'Wednesday';
+        break;
+    case 4:
+        dayName = 'Thursday';
+        break;
+    case 5:
+        dayName = 'Friday';
+        break;
+    case 6:
+        dayName = 'Saturday';
+        break;
+    default:
+        dayName = 'Invalid day';
+}
+
+console.log(dayName); // Output: Wednesday
+
+let fruit = 'banana';
+let color;
+
+switch (fruit) {
+    case 'banana':
+    case 'lemon':
+        color = 'yellow';
+        break;
+    case 'apple':
+    case 'strawberry':
+        color = 'red';
+        break;
+    case 'lime':
+    case 'grape':
+        color = 'green';
+        break;
+    default:
+        color = 'unknown';
+}
+
+console.log(color); // Output: yellow
+
+//function
+
+function add(a, b) {
+    return a + b;
+}
+
+const result = add(3, 4);
+console.log(result); // Output: 7
+
+function person(firstName, lastName,dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+
+    </script>
+</section>

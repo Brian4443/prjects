@@ -1,0 +1,238 @@
+<!-- 
+<section>
+
+    <link rel="stylesheet" href="output.css">
+
+    <div class="bg-gray-900 h-screen flex justify-center 
+        gap-x-16 text-white ">
+    <div class="w-[300px] h-[420px] bg-transparent cursor-pointer group">
+        <div class="relative group-hover:my-rotate-y-180 w-full h-full duration-1000">
+            <div class="absolute border-2 w-full h-full ">
+                <img src="./images/pp.png" class="w-full h-full" />
+            </div>
+            <div class="absolute w-full h-full bg-gray-500"></div>
+        </div>
+    </div>  
+     
+ 
+    <!-- <script>
+        // JavaScript for additional interaction
+        document.querySelector('.hover-container').addEventListener('mouseover', function() {
+            console.log('Mouse over the container');
+        });
+    </script> -->
+    <!-- <script>
+        const plugin = require("tailwindcss/plugin");
+
+const Myclass = plugin(function ({ addUtilities })  
+{
+  addUtilities({
+    ".my-rotate-y-180":{
+    tranform: "rotateY(180deg)", 
+
+    },
+    "perserve-3d":{
+        transformstyle:
+    }
+  });
+});
+
+    </script>
+   </section> --> -->
+<!-- <body>
+   <div id="color-box"></div>
+   <p style="color:white;"> will make it</p>
+   <script src="script.js"></script>
+</body>
+<style>
+    body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+#color-box {
+    width: 100vw;
+    height: 100vh;
+    transition: background-color 0.1s;
+}
+
+</style>
+<script>
+    document.addEventListener('mousemove', function(event) {
+    const x = event.clientX;
+    const y = event.clientY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    // Calculate the color based on the mouse position
+    const red = Math.round((x / width) * 255);
+    const green = Math.round((y / height) * 255);
+    const blue = Math.round(((x / width) + (y / height)) * 127);
+
+    // Set the background color of the div
+    document.getElementById('color-box').style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+});
+</script> -->
+
+
+<body>
+    <!-- Button to open the modal -->
+    <!-- <button id="open-modal-btn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Modal Header</h2>
+            <p>This is a classic modal example.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+ </style> 
+<script>
+// script.js
+
+// Get the modal
+var modal = document.getElementById("modal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("open-modal-btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+</script> -->
+
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.nav-buttons {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+
+.nav-buttons button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.section {
+    padding: 100px;
+    height: 100vh; /* Full height of the viewport */
+    border-bottom: 1px solid #ddd;
+}
+
+#section1 { background-color: #f8f8f8; }
+#section2 { background-color: #e8e8e8; }
+#section3 { background-color: #d8d8d8; }
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Navigation Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button onclick="location.href='#section1'">Go to Section 1</button>
+        <button onclick="location.href='#section2'">Go to Section 2</button>
+        <button onclick="location.href='#section3'">Go to Section 3</button>
+    </div>
+
+    <!-- Page Sections -->
+    <div id="section1" class="section">
+        <h2>Section 1</h2>
+        <p>This is the first section of the webpage.</p>
+    </div>
+
+    <div id="section2" class="section">
+        <h2>Section 2</h2>
+        <p>This is the second section of the webpage.</p>
+    </div>
+
+    <div id="section3" class="section">
+        <h2>Section 3</h2>
+        <p>This is the third section of the webpage.</p>
+    </div>
+
+</body>
+</html>

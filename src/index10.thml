@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/materialize-css@1.0.0/dist/css/materialize.min.css" rel="stylesheet">
+    <title>My Contacts</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="">My Contacts!</h1>
+        <input type="text" id="filterInput" placeholder="search names.........">
+        <ul id="names" class="collection with-header">
+            <li class="collection-header">
+                <h5>A</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Abe</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Adam</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Alan</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Anna</a>
+            </li>
+            <li class="collection-header">
+                <h5>B</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Brian</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Beth</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Bob</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Brad</a>
+            </li>
+            <li class="collection-header">
+                <h5>C</h5>
+            </li>
+            <li class="collection-item">
+                <a href="#">Carrie</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Caty</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Catur</a>
+            </li>
+            <li class="collection-item">
+                <a href="#">Carter</a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        let filterInput = document.getElementById('filterInput');
+        // add event listener
+        filterInput.addEventListener('keyup', filterNames);
+
+        function filterNames() {
+            // Get value of input
+            let filterValue = document.getElementById('filterInput').value.toUpperCase();
+
+            // Get names ul
+            let ul = document.getElementById('names');
+
+            // Get lis from ul
+            let li = ul.querySelectorAll('li.collection-item');
+
+            // Loop through collection-item lis
+            for (let i = 0; i < li.length; i++) {
+                let a = li[i].getElementsByTagName('a')[0];
+
+                // If matched
+                if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+NEW 
+
+
+!
+
+<style>
+    body, .wrap, .slide-content {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+
+    #slider {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 80%;
+        margin: 0 auto;
+    }
+
+    .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .slide {
+        min-width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Optional: To make text more visible */
+    }
+
+    .slide-content span {
+        font-size: 2rem; /* Adjusted font size */
+        color: white;
+    }
+
+    .arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    #arrow-left {
+        border-width: 30px 40px 30px 0;
+        border-color: transparent white transparent transparent;
+        left: 10px; /* Adjusted for better positioning */
+    }
+
+    #arrow-right {
+        border-width: 30px 0 30px 40px;
+        border-color: transparent transparent transparent white;
+        right: 10px; /* Adjusted for better positioning */
+    }
+</style>

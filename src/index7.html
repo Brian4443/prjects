@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            font-family: poppins;
+            background-color: #0000;
+            
+            margin: 0;
+            font-size: 40px;
+        }
+        a{
+            text-decoration: none;
+           
+        }
+    </style>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Contacts</a>
+            <a href="#">Info</a>
+        </nav>
+    </header>
+
+    <script src="app.js"></script>
+</body>
+</html> -->
+
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="relative w-48 h-48">
+        <div class="absolute inset-0 border-8 border-t-transparent border-r-red-500 border-b-green-500 border-l-blue-500 rounded-full animate-spin" id="spinner"></div>
+    </div>
+    <button class="mt-10 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700" onclick="spin()">Spin</button>
+
+    <script>
+        function spin() {
+            const spinner = document.getElementById('spinner');
+            const randomDegree = Math.floor(Math.random() * 360) + 720; // Random degree with at least 2 full spins
+            spinner.style.transition = 'transform 2s ease-out';
+            spinner.style.transform = `rotate(${randomDegree}deg)`;
+            setTimeout(() => {
+                spinner.style.transition = '';
+                spinner.style.transform = '';
+            }, 2000);
+        }
+    </script>

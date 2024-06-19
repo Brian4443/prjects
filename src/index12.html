@@ -1,0 +1,137 @@
+<!-- <section>
+    <link rel="stylesheet" href="output.css">
+<html>
+<body class="body bg-slate-300 ">
+<div class=" main bg-transparent white">
+    <div class="cod">
+        <h1 class="font-bold text-xl">Coding for Developers </h1>
+    </div>
+    <div>
+        <ul class="">
+
+            <li class="mt-6 ml-7 text-xl font-serif"><a href="#"><i class="fas fa-qrcode"></i>
+                Dashboard</a></li>
+            <li class="mt-6 ml-7 text-xl font-serif"><a href="#"><i class="fas fa-qrcode"></i>
+                Shortcuts</a></li>
+            <li class="mt-6 ml-7 text-xl font-serif"><a href="#"> <i class="fas fa-qrcode"></i>
+                Overview</a></li>
+            <li class="mt-6 ml-7 text-xl font-serif"><a href="#"> <i class="fas fa-qrcode"></i>
+                Events</a></li>
+            <li class="mt-6 ml-7 text-xl font-serif"><a href="#"> <i class="fas fa-qrcode"></i>
+                Services</a></li>
+            <li class="mt-6 ml-7 text-xl font-serif"><a href="#"> <i class="fas fa-qrcode"></i>
+                Contact</a></li>
+            <li class="mt-6 ml-7 text-xl font-serif"><a href="#"> <i class="fas fa-qrcode"></i>
+                Feedback</a></li>
+        </ul>
+    </div>
+
+
+</div>
+</body>
+</html>
+
+<script>
+
+    const form = document.getElementById('generate-form');
+    const QR = document.getElementById('')
+</script>
+</section> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR CODE</title>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <header class="bg-red-500 p-4 mb-10">
+        <div class="max-w-xl m-auto">
+            <div class="text-xl font-bold text-white">QR CODE FOR DEVELOPERS</div>
+        </div>
+    </header>
+    <main>
+        <div class="flex flex-col-reverse align-middle justify-center m-auto md:max-w-4xl md:flex-row p-10">
+            <div class="w-full md:w-1/2">
+                <h1 class="text-3xl font-bold mb-5 md:4xl">QR CODE FOR DEVELOPERS</h1>
+                <p>QR Code allows smartphone users to access your website simple and quickly</p>
+                <p>Enter your URL below to generate a QR Code for developers</p>
+                <form id="generate-form" class="mt-4">
+                    <input
+                        id="url"
+                        type="url"
+                        placeholder="Enter QR code URL"
+                        class="w-full border-2 border-gray-500 rounded p-3 text-gray-dark mr-2 focus:outline-none mb-5"
+                    />
+                    <select
+                        id="size"
+                        class="w-full border-2 border-gray-500 rounded p-3 text-gray-dark mr-2 focus:outline-none"
+                    >
+                        <option value="100">100*100</option>
+                        <option value="200">200*200</option>
+                        <option value="300" selected>300*300</option>
+                        <option value="400">400*400</option>
+                        <option value="500">500*500</option>
+                        <option value="600">600*600</option>
+                        <option value="700">700*700</option>
+                    </select>
+                    <button 
+                        class="bg-gray-900 rounded w-full text-white py-3 px-4 mt-10 hover:bg-black"
+                        type="submit"
+                    >
+                        Generate QR Code
+                    </button>
+                </form>
+            </div>
+            <div class="w-full md:w-1/2 self-center">
+                <div id="qrcode" class="w-full flex justify-center"></div>
+            </div>
+        </div>
+        <div class="max-w-5xl m-auto flex flex-col text-center align-middle justify-center mt-20">
+        </div>
+    </main>
+</body>
+</html>
+<script>
+const form = document.getElementById('generate-form');
+const qrcode = document.getElementById('qrcode');
+
+const onGenerateSubmit = (e) => {
+    e.preventDefault();
+
+    clearQRCode();
+
+    const url = document.getElementById('url').value;
+    const size = document.getElementById('size').value;
+
+    if (url === '') {
+        alert('Please enter a URL');
+    } else {
+        generateQRCode(url, size);
+    }
+};
+
+const generateQRCode = (url, size) => {
+    new QRCode(qrcode, {
+        text: url,
+        width: size,
+        height: size,
+    });
+};
+
+const clearQRCode = () => {
+    qrcode.innerHTML = '';
+};
+
+form.addEventListener('submit', onGenerateSubmit);
+
+</script>

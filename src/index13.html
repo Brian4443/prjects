@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+    <link rel="stylesheet" href="output.css">
+    <title>Animated Counter</title>
+    <style>
+        .bg-classic {
+            background-image: url(images/classic.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-classic bg-gray-300">
+    <div>
+        <header>
+            <div class="text-center text-4xl font-bold mt-36 text-white font-serif">
+                <h1>Animated Counter for Developers</h1>
+            </div>
+        </header>
+
+        <section>
+            <div class="counters">
+                <div class="container mt-64 flex gap-28 md:justify-center sm:ml-10 md:ml-40 text-white border p-10 rounded">
+                    <div class="mt-20">
+                        <i class="fab fa-youtube fa-4x"></i>
+                        <div class="counter mt-4 text-2xl" data-target="15000">0</div>
+                        <h3 class="mt-4">Subscribers</h3>
+                    </div>
+
+                    <div class="mt-20">
+                        <i class="fab fa-twitter fa-4x"></i>
+                        <div class="counter mt-4 text-2xl" data-target="60000">0</div>
+                        <h3 class="mt-4">Followers</h3>
+                    </div>
+
+                    <div class="mt-20">
+                        <i class="fab fa-facebook-f" style="font-size:60px"></i>
+                        <div class="counter mt-4 text-2xl" data-target="9000">0</div>
+                        <h3 class="mt-4">Likes</h3>
+                    </div>
+
+                    <div class="mt-20">
+                        <i class="fab fa-linkedin fa-4x"></i>
+                        <div class="counter mt-4 text-2xl" data-target="5000">0</div>
+                        <h3 class="mt-4">Connections</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 5000;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        });
+    </script>
+</body>
+
+</html>
